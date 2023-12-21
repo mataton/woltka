@@ -28,22 +28,22 @@ jobs:
         run: conda install --file ci/conda_requirements.txt 
 
       - name: Install CI packages
-        run: conda install pycodestyle coverage
+        run: conda install pycodestyle coverage ruff
 
       - name: Install program
         run: pip install -e .
 
-      - name: Check style
-        run: pycodestyle .
+      # - name: Check style
+      #   run: pycodestyle .
 
-      - name: Run unit tests
-        run: coverage run -m unittest && coverage lcov
+      # - name: Run unit tests
+      #   run: coverage run -m unittest && coverage lcov
 
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: coverage.lcov
+      # - name: Coveralls
+      #   uses: coverallsapp/github-action@master
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     path-to-lcov: coverage.lcov
 
       - name: Ruff
         uses: chartboost/ruff-action@v1

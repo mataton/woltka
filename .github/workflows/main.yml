@@ -44,3 +44,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: coverage.lcov
+
+      - name: Ruff
+        uses: chartboost/ruff-action@v1

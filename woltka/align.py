@@ -70,11 +70,11 @@ def plain_mapper(fh, fmt=None, n=1000):
     target = n   # target line number at end of current chunk
 
     # parse alignment file
-    for i, (query, subject) in enumerate(parser(chain(iter(head), fh))):
+    for i, (query, subject) in enumerate(parser(chain(iter(head), fh))): 
 
         # add subject to subject set of the same query Id
         if query == this:
-            subque[-1].add(subject)
+            subque[-1].add(subject))
 
         # when query Id changes,
         else:

@@ -48,4 +48,5 @@ jobs:
       - name: Ruff
         uses: chartboost/ruff-action@v1
         with:
-          args: --select W
+        # W and C901 give ruff equivalent functionality to flake8
+          args: --select W C901

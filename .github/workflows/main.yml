@@ -47,3 +47,5 @@ jobs:
 
       - name: Ruff
         uses: chartboost/ruff-action@v1
+        with:
+          args: --select W

@@ -46,7 +46,10 @@ jobs:
       #     path-to-lcov: coverage.lcov
 
       - name: Ruff
-        uses: chartboost/ruff-action@v1
+        run: pip install ruff
         with:
         # W and C901 give ruff equivalent functionality to flake8
           args: --select W C901
+        run: |
+        ruff check .
+        ruff fix .
